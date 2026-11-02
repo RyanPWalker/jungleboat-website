@@ -1,0 +1,8 @@
+name = "jungleboat-website"
+compatibility_date = "2026-10-01"
+pages_build_output_dir = "public"
+
+[vars]
+CONTACT_TO = "johnny.bestdayevervacations@gmail.com"
+# Change once jungleboatvacations.com is verified in Resend.
+CONTACT_FROM = "Jungle Boat Vacations <onboarding@resend.dev>"

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jungle Boat Vacations</title>
+  <meta name="description" content="Jungle Boat Vacations — TODO: one-sentence description from the current site.">
+  <meta property="og:title" content="Jungle Boat Vacations">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jungleboatvacations.com/">
+  <!-- TODO: <meta property="og:image" content="https://jungleboatvacations.com/images/hero.webp"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">Jungle Boat <span>Vacations</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav">
+        <a href="#trips">Trips</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact" class="btn btn-small">Book now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO — swap the background in styles.css (.hero) for /images/hero.webp -->
+    <section class="hero">
+      <div class="container hero-content">
+        <p class="eyebrow">TODO: location / tagline</p>
+        <h1>TODO: Headline from the current site</h1>
+        <p class="lead">TODO: Short intro paragraph from the current site.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn">Plan your trip</a>
+          <a href="#trips" class="btn btn-ghost">See trips</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="trips" class="section">
+      <div class="container">
+        <h2 class="section-title">Trips</h2>
+        <p class="section-lead">TODO: intro to the trips/packages.</p>
+        <div class="cards">
+          <!-- Copy this card once per trip/package -->
+          <article class="card">
+            <div class="card-img placeholder-img" role="img" aria-label="Trip photo"></div>
+            <div class="card-body">
+              <h3>TODO: Trip name</h3>
+              <p>TODO: Trip description.</p>
+              <p class="card-meta">TODO: duration · price</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img placeholder-img" role="img" aria-label="Trip photo"></div>
+            <div class="card-body">
+              <h3>TODO: Trip name</h3>
+              <p>TODO: Trip description.</p>
+              <p class="card-meta">TODO: duration · price</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img placeholder-img" role="img" aria-label="Trip photo"></div>
+            <div class="card-body">
+              <h3>TODO: Trip name</h3>
+              <p>TODO: Trip description.</p>
+              <p class="card-meta">TODO: duration · price</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-alt">
+      <div class="container split">
+        <div>
+          <h2 class="section-title">About</h2>
+          <p>TODO: About text from the current site.</p>
+        </div>
+        <div class="split-img placeholder-img" role="img" aria-label="About photo"></div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2 class="section-title">Gallery</h2>
+        <!-- Add photos as: <img src="/images/name.webp" alt="..." loading="lazy" width="800" height="600"> -->
+        <div class="gallery">
+          <div class="placeholder-img"></div>
+          <div class="placeholder-img"></div>
+          <div class="placeholder-img"></div>
+          <div class="placeholder-img"></div>
+          <div class="placeholder-img"></div>
+          <div class="placeholder-img"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-dark">
+      <div class="container split">
+        <div>
+          <h2 class="section-title">Get in touch</h2>
+          <p>Tell us about your trip and we'll get back to you soon.</p>
+          <p class="contact-direct">Or email <a href="mailto:johnny.bestdayevervacations@gmail.com">johnny.bestdayevervacations@gmail.com</a></p>
+        </div>
+        <form class="contact-form" action="/api/contact" method="post" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" autocomplete="name" required maxlength="100">
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required maxlength="200">
+            </div>
+            <div class="field">
+              <label for="phone">Phone <span class="optional">(optional)</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="dates">Travel dates <span class="optional">(optional)</span></label>
+              <input id="dates" name="dates" maxlength="100" placeholder="e.g. March 10–17">
+            </div>
+            <div class="field">
+              <label for="guests">Guests <span class="optional">(optional)</span></label>
+              <input id="guests" name="guests" type="number" min="1" max="99" inputmode="numeric">
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required maxlength="5000"></textarea>
+          </div>
+          <!-- Honeypot: hidden from people, bots fill it in -->
+          <div class="hp" aria-hidden="true">
+            <label for="company">Company</label>
+            <input id="company" name="company" tabindex="-1" autocomplete="off">
+          </div>
+          <!-- TODO: replace test sitekey with the real Turnstile site key -->
+          <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="dark"></div>
+          <button type="submit" class="btn">Send message</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Jungle Boat Vacations</p>
+      <p><a href="mailto:johnny.bestdayevervacations@gmail.com">johnny.bestdayevervacations@gmail.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>
