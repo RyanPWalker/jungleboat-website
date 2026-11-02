@@ -34,13 +34,13 @@ form.addEventListener("submit", async (e) => {
     if (!res.ok || !out.ok) throw new Error(out.error || "Something went wrong. Please try again.");
     form.reset();
     status.classList.add("success");
-    status.textContent = "Thanks! Your message is on its way. We'll be in touch soon.";
+    status.textContent = "Thanks! I'll be in touch soon to start planning.";
   } catch (err) {
     status.classList.add("error");
     status.textContent = err.message;
   } finally {
     if (window.turnstile) window.turnstile.reset();
     button.disabled = false;
-    button.textContent = "Send message";
+    button.textContent = "Send";
   }
 });

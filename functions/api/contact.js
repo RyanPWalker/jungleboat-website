@@ -7,7 +7,7 @@
 //   CONTACT_TO            inbox that receives messages (set in wrangler.toml)
 //   CONTACT_FROM          sender address (must be allowed by Resend)
 
-const MAX_LEN = { name: 100, email: 200, phone: 40, dates: 100, guests: 20, message: 5000 };
+const MAX_LEN = { name: 100, email: 200, phone: 40, destination: 60, dates: 100, guests: 60, message: 5000 };
 
 export async function onRequestPost({ request, env }) {
   let form;
@@ -42,8 +42,9 @@ export async function onRequestPost({ request, env }) {
     `Name: ${data.name}`,
     `Email: ${data.email}`,
     data.phone ? `Phone: ${data.phone}` : null,
+    data.destination ? `Destination: ${data.destination}` : null,
     data.dates ? `Travel dates: ${data.dates}` : null,
-    data.guests ? `Guests: ${data.guests}` : null,
+    data.guests ? `Travelers: ${data.guests}` : null,
     "",
     data.message,
   ].filter((l) => l !== null);
@@ -58,7 +59,7 @@ export async function onRequestPost({ request, env }) {
       from: env.CONTACT_FROM,
       to: [env.CONTACT_TO],
       reply_to: data.email,
-      subject: `Website inquiry from ${data.name}`,
+      subject: `Trip inquiry from ${data.name}${data.destination ? ` (${data.destination})` : ""}`,
       text: lines.join("\n"),
     }),
   });
