@@ -95,6 +95,14 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.12;
     linear-gradient(135deg, var(--navy), #3a4f8a);
 }
 .hero-content { padding: 5rem 0; }
+@media (max-width: 760px) {
+  .hero {
+    background:
+      linear-gradient(rgba(14, 22, 42, 0.72), rgba(14, 22, 42, 0.78)),
+      url("/images/castle.webp") 50% 30% / cover no-repeat,
+      linear-gradient(135deg, var(--navy), #3a4f8a);
+  }
+}
 .hero-content > * { max-width: 640px; }
 .hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
 .eyebrow { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.85rem; font-weight: 600; color: var(--gold); margin: 0 0 0.9rem; }
@@ -115,11 +123,8 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.12;
 .split-top { align-items: start; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 @media (max-width: 860px) { .split, .split-top { grid-template-columns: minmax(0, 1fr); } }
 .portrait img {
-  width: 100%; max-width: 420px; aspect-ratio: 1; object-fit: cover;
-  border-radius: 50%;
+  width: 100%; height: auto; max-width: 420px; aspect-ratio: 1; object-fit: contain;
   margin-inline: auto;
-  background: linear-gradient(135deg, #dfe6f3, #c4d0e8);
-  box-shadow: 0 0 0 10px var(--cream), 0 0 0 12px var(--gold), var(--shadow);
 }
 
 /* Services */
