@@ -1,8 +1,12 @@
 name = "jungleboat-website"
+main = "src/worker.js"
 compatibility_date = "2026-10-01"
-pages_build_output_dir = "public"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
 
 [vars]
 CONTACT_TO = "johnny.bestdayevervacations@gmail.com"
 # Change once jungleboatvacations.com is verified in Resend.
-CONTACT_FROM = "Jungle Boat Vacations <onboarding@resend.dev>"
+CONTACT_FROM = "JungleBoat Vacations <onboarding@resend.dev>"
