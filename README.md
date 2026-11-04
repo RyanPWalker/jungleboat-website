@@ -36,7 +36,7 @@ Static files are free and unlimited, and the contact form uses a few of the free
 Messages go to the `CONTACT_TO` address in `wrangler.toml`.
 
 1. **Turnstile (spam protection):** Cloudflare dashboard → **Turnstile** → **Add widget** for `jungleboatvacations.com`.
-   - Put the **site key** in `public/index.html`, replacing `1x00000000000000000000AA`.
+   - The **site key** is in `public/index.html` (`data-sitekey`).
    - Add the **secret key** as an encrypted variable `TURNSTILE_SECRET_KEY` in the Worker (Settings → Variables and Secrets).
 2. **Resend (sending email):** sign up at resend.com and create an API key. Add it as a secret `RESEND_API_KEY` in the same place.
 3. **Sender address:** until the domain is verified, `onboarding@resend.dev` can only send to the email address you signed up to Resend with. So either sign up with the Gmail address in `CONTACT_TO`, or verify the domain:
