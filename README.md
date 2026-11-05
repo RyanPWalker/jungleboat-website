@@ -39,9 +39,7 @@ Messages go to the `CONTACT_TO` address in `wrangler.toml`.
    - The **site key** is in `public/index.html` (`data-sitekey`).
    - Add the **secret key** as an encrypted variable `TURNSTILE_SECRET_KEY` in the Worker (Settings → Variables and Secrets).
 2. **Resend (sending email):** sign up at resend.com and create an API key. Add it as a secret `RESEND_API_KEY` in the same place.
-3. **Sender address:** until the domain is verified, `onboarding@resend.dev` can only send to the email address you signed up to Resend with. So either sign up with the Gmail address in `CONTACT_TO`, or verify the domain:
-   - In Resend → **Domains**, add `jungleboatvacations.com`. Resend can add its DNS records to Cloudflare for you.
-   - Then change `CONTACT_FROM` in `wrangler.toml` to something like `Jungle Boat Vacations <contact@jungleboatvacations.com>`.
+3. **Sender address:** `CONTACT_FROM` uses `contact@jungleboatvacations.com`. The domain is verified in Resend, so any address on it can send. It's send-only and has no inbox.
 
 Replies go straight to the visitor, because each message sets `reply_to` to the email address they entered.
 

@@ -8,5 +8,5 @@ binding = "ASSETS"
 
 [vars]
 CONTACT_TO = "johnny.bestdayevervacations@gmail.com"
-# Change once jungleboatvacations.com is verified in Resend.
-CONTACT_FROM = "JungleBoat Vacations <onboarding@resend.dev>"
+# Send-only address on the Resend-verified domain. It has no inbox.
+CONTACT_FROM = "JungleBoat Vacations Website <contact@jungleboatvacations.com>"
