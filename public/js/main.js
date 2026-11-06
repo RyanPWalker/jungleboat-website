@@ -14,6 +14,13 @@ nav.addEventListener("click", (e) => {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// Budget buttons: pre-select that budget in the form (the link scrolls there)
+document.querySelectorAll(".budget-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.getElementById("budget").value = btn.dataset.budget;
+  });
+});
+
 // Contact form: send with fetch so the page doesn't reload
 const form = document.querySelector(".contact-form");
 const status = form.querySelector(".form-status");

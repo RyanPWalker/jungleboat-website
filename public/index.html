@@ -87,7 +87,7 @@
         <h1>Experience Disney without the stress of planning</h1>
         <p class="lead">From Deluxe Resorts and Club Level accommodations to unforgettable family experiences, enjoy personalized one-on-one planning at no additional cost when you book with Johnny.</p>
         <div class="hero-actions">
-          <a href="#contact" class="btn">Plan my Disney trip</a>
+          <a href="#contact" class="btn">Start Planning My Disney Trip</a>
           <a href="#services" class="btn btn-ghost">Complimentary planning</a>
           <a href="#about" class="btn btn-ghost">Meet your advisor</a>
         </div>
@@ -121,10 +121,20 @@
         <ul class="features">
           <li><span class="icon" aria-hidden="true">✦</span>Personalized one-on-one planning</li>
           <li><span class="icon" aria-hidden="true">✦</span>Deluxe resort, Club Level &amp; concierge accommodations</li>
-          <li><span class="icon" aria-hidden="true">✦</span>Personalized park &amp; daily planning</li>
           <li><span class="icon" aria-hidden="true">✦</span>Disney Cruise &amp; resort vacation packages</li>
           <li><span class="icon" aria-hidden="true">✦</span>Assistance before &amp; during your trip</li>
         </ul>
+        <div class="budget">
+          <h3>What is your approximate budget?</h3>
+          <p>Pick a range to start planning your trip.</p>
+          <div class="budget-options">
+            <a href="#contact" class="budget-btn" data-budget="Under $5,000">Under &#36;5,000</a>
+            <a href="#contact" class="budget-btn" data-budget="$5,000 – $10,000">&#36;5,000 – &#36;10,000</a>
+            <a href="#contact" class="budget-btn" data-budget="$10,000 – $15,000">&#36;10,000 – &#36;15,000</a>
+            <a href="#contact" class="budget-btn" data-budget="$15,000 – $25,000">&#36;15,000 – &#36;25,000</a>
+            <a href="#contact" class="budget-btn" data-budget="$25,000+">&#36;25,000+</a>
+          </div>
+        </div>
         <div class="callout">
           <h3>Personalized, upscale Disney planning, at no additional cost</h3>
           <p>My planning services are complimentary when you book your Disney trip with me.</p>
@@ -155,15 +165,28 @@
               <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
             </div>
           </div>
-          <div class="field">
-            <label for="destination">Destination</label>
-            <select id="destination" name="destination">
-              <option>Walt Disney World</option>
-              <option>Disneyland</option>
-              <option>Disney Cruise Line</option>
-              <option>Universal</option>
-              <option>Not sure yet</option>
-            </select>
+          <div class="field-row">
+            <div class="field">
+              <label for="destination">Destination</label>
+              <select id="destination" name="destination">
+                <option>Walt Disney World</option>
+                <option>Disneyland</option>
+                <option>Disney Cruise Line</option>
+                <option>Universal</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="budget">Approximate budget</label>
+              <select id="budget" name="budget" required>
+                <option value="" disabled selected>Choose a range</option>
+                <option>Under $5,000</option>
+                <option>$5,000 – $10,000</option>
+                <option>$10,000 – $15,000</option>
+                <option>$15,000 – $25,000</option>
+                <option>$25,000+</option>
+              </select>
+            </div>
           </div>
           <div class="field-row">
             <div class="field">

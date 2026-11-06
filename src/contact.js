@@ -7,7 +7,8 @@
 //   CONTACT_TO            inbox that receives messages (set in wrangler.toml)
 //   CONTACT_FROM          sender address (must be allowed by Resend)
 
-const MAX_LEN = { name: 100, email: 200, phone: 40, destination: 60, dates: 100, guests: 60, message: 5000 };
+const MAX_LEN = { name: 100, email: 200, phone: 40, destination: 60, budget: 40, dates: 100, guests: 60, message: 5000 };
+const BUDGETS = ["Under $5,000", "$5,000 – $10,000", "$10,000 – $15,000", "$15,000 – $25,000", "$25,000+"];
 
 export async function handleContact(request, env) {
   let form;
@@ -31,6 +32,10 @@ export async function handleContact(request, env) {
     return json({ ok: false, error: "Please fill in your name, a valid email, and a message." }, 400);
   }
 
+  if (!BUDGETS.includes(data.budget)) {
+    return json({ ok: false, error: "Please choose your approximate budget." }, 400);
+  }
+
   const check = await verifyTurnstile(
     form.get("cf-turnstile-response"),
     env.TURNSTILE_SECRET_KEY,
@@ -49,6 +54,7 @@ export async function handleContact(request, env) {
     `Email: ${data.email}`,
     data.phone ? `Phone: ${data.phone}` : null,
     data.destination ? `Destination: ${data.destination}` : null,
+    `Budget: ${data.budget}`,
     data.dates ? `Travel dates: ${data.dates}` : null,
     data.guests ? `Travelers: ${data.guests}` : null,
     "",
@@ -71,7 +77,7 @@ export async function handleContact(request, env) {
         from: env.CONTACT_FROM,
         to: [env.CONTACT_TO],
         reply_to: data.email,
-        subject: `Trip inquiry from ${data.name}${data.destination ? ` (${data.destination})` : ""}`,
+        subject: `Trip inquiry from ${data.name}${data.destination ? ` (${data.destination})` : ""}, ${data.budget}`,
         text: lines.join("\n"),
       }),
     });
