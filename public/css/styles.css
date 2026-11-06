@@ -122,16 +122,32 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.12;
 .split { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
 .split-top { align-items: start; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 @media (max-width: 860px) { .split, .split-top { grid-template-columns: minmax(0, 1fr); } }
-.portrait img {
-  width: 100%; height: auto; max-width: 420px; aspect-ratio: 1; object-fit: contain;
-  margin-inline: auto;
+.portrait { position: relative; max-width: 400px; margin-inline: auto; padding-bottom: 2rem; }
+.portrait .photo {
+  width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
+/* Cartoon logo tucked over the photo's bottom corner */
+.portrait .badge {
+  position: absolute; right: -1.5rem; bottom: 0;
+  width: 45%; height: auto;
+  filter: drop-shadow(0 6px 14px rgba(20, 33, 61, 0.25));
+}
+@media (max-width: 860px) { .portrait .badge { right: -0.5rem; } }
+
+.affiliation { display: flex; align-items: center; gap: 0.9rem; margin: 0 0 1.5rem; }
+.affiliation img { width: 58px; height: auto; }
+.affiliation p { margin: 0; font-size: 0.95rem; line-height: 1.35; color: var(--muted); }
+.affiliation strong { color: var(--ink); }
 
 /* Services */
 .features {
-  list-style: none; padding: 0; margin: 2.5rem 0 0;
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 1rem;
+  list-style: none; padding: 0; margin: 2.5rem auto 0; max-width: 860px;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;
 }
+.features li { flex: 0 1 calc(50% - 0.5rem); }
+@media (max-width: 700px) { .features li { flex-basis: 100%; } }
 .features li {
   display: flex; align-items: center; gap: 0.9rem;
   background: var(--white); border-radius: 12px; padding: 1.1rem 1.25rem;
@@ -144,7 +160,7 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.12;
   background: var(--navy); color: var(--gold); font-size: 0.95rem;
 }
 .callout {
-  margin-top: 2.5rem; padding: clamp(1.5rem, 4vw, 2.25rem);
+  max-width: 860px; margin: 2.5rem auto 0; padding: clamp(1.5rem, 4vw, 2.25rem);
   border-radius: var(--radius); text-align: center;
   background: linear-gradient(135deg, var(--jungle), #245a42); color: var(--white);
 }
