@@ -31,13 +31,17 @@ export async function handleContact(request, env) {
     return json({ ok: false, error: "Please fill in your name, a valid email, and a message." }, 400);
   }
 
-  const verified = await verifyTurnstile(
+  const check = await verifyTurnstile(
     form.get("cf-turnstile-response"),
     env.TURNSTILE_SECRET_KEY,
     request.headers.get("CF-Connecting-IP"),
   );
-  if (!verified) {
-    return json({ ok: false, error: "Spam check failed. Please refresh the page and try again." }, 400);
+  if (!check.ok) {
+    console.error("Turnstile rejected", check.codes);
+    return json(
+      { ok: false, error: "Spam check failed. Please refresh the page and try again.", codes: check.codes },
+      400,
+    );
   }
 
   const lines = [
@@ -85,7 +89,9 @@ export async function handleContact(request, env) {
 }
 
 async function verifyTurnstile(token, secret, ip) {
-  if (!token || !secret) return false;
+  // Error codes are Cloudflare's, plus two of ours for a missing token or secret.
+  if (!secret) return { ok: false, codes: ["missing-secret-env"] };
+  if (!token) return { ok: false, codes: ["missing-token"] };
   const body = new FormData();
   body.append("secret", secret);
   body.append("response", token);
@@ -96,10 +102,10 @@ async function verifyTurnstile(token, secret, ip) {
       body,
     });
     const out = await res.json();
-    return out.success === true;
+    return { ok: out.success === true, codes: out["error-codes"] ?? [] };
   } catch (err) {
-    console.error("Turnstile check failed", err);
-    return false;
+    console.error("Turnstile request failed", err);
+    return { ok: false, codes: ["siteverify-unreachable"] };
   }
 }
 

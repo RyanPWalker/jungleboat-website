@@ -6,6 +6,10 @@ compatibility_date = "2026-10-01"
 directory = "./public"
 binding = "ASSETS"
 
+# Keep logs so form errors show up under the Worker's Observability tab.
+[observability]
+enabled = true
+
 [vars]
 CONTACT_TO = "johnny.bestdayevervacations@gmail.com"
 # Send-only address on the Resend-verified domain. It has no inbox.
