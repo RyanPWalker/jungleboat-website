@@ -52,6 +52,9 @@
     "knowsAbout": ["Walt Disney World", "Disneyland", "Disney Cruise Line", "Universal Studios"]
   }
   </script>
+  <!-- Start the hero photo download early; it's the first thing people see -->
+  <link rel="preload" as="image" href="/images/castle-960.webp" media="(max-width: 760px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/castle.webp" media="(min-width: 761px)" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
@@ -63,7 +66,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="logo">
-        <img src="/images/logo-192.png" alt="" width="40" height="40">
+        <img src="/images/logo-80.webp" alt="" width="40" height="40">
         <span>JungleBoat <em>Vacations</em></span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
@@ -94,15 +97,15 @@
     <section id="about" class="section">
       <div class="container split">
         <div class="portrait">
-          <img class="photo" src="/images/johnny.webp" alt="Johnny Walker, Disney travel advisor" width="720" height="900" loading="lazy">
-          <img class="badge" src="/images/jungleboat-badge.webp" alt="JungleBoat Vacations logo: a cartoon of Johnny at the wheel of a jungle boat" width="400" height="400" loading="lazy">
+          <img class="photo" src="/images/johnny.webp" srcset="/images/johnny-400.webp 400w, /images/johnny.webp 800w" sizes="(max-width: 860px) 90vw, 400px" alt="Johnny Walker, Disney travel advisor" width="800" height="1000" loading="lazy" decoding="async">
+          <img class="badge" src="/images/jungleboat-badge.webp" alt="JungleBoat Vacations logo: a cartoon of Johnny at the wheel of a jungle boat" width="360" height="360" loading="lazy" decoding="async">
         </div>
         <div>
           <p class="eyebrow eyebrow-dark">Meet your travel advisor</p>
           <h2 class="section-title">Johnny Walker</h2>
           <p class="subtitle">Former Disney Cast Member</p>
           <div class="affiliation">
-            <img src="/images/best-day-ever-logo.png" alt="Best Day Ever! Vacations logo" width="220" height="240" loading="lazy">
+            <img src="/images/best-day-ever-logo.webp" alt="Best Day Ever! Vacations logo" width="120" height="131" loading="lazy" decoding="async">
             <p>Independent Agent with<br><strong>Best Day Ever Vacations</strong></p>
           </div>
           <p>After more than 10 years as a Disneyland Cast Member and decades of executive leadership in hospitality, I understand what exceptional guest service looks like, and how much the details matter.</p>

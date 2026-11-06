@@ -99,7 +99,7 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.12;
   .hero {
     background:
       linear-gradient(rgba(14, 22, 42, 0.72), rgba(14, 22, 42, 0.78)),
-      url("/images/castle.webp") 50% 30% / cover no-repeat,
+      url("/images/castle-960.webp") 50% 30% / cover no-repeat,
       linear-gradient(135deg, var(--navy), #3a4f8a);
   }
 }
