@@ -11,6 +11,7 @@ binding = "ASSETS"
 enabled = true
 
 [vars]
-CONTACT_TO = "johnny.bestdayevervacations@gmail.com"
+# Forwards to Johnny's Gmail via Cloudflare Email Routing, so Gmail replies from this address
+CONTACT_TO = "johnny@jungleboatvacations.com"
 # Send-only address on the Resend-verified domain. It has no inbox.
 CONTACT_FROM = "JungleBoat Vacations Website <contact@jungleboatvacations.com>"
