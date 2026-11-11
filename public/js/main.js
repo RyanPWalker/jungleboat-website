@@ -42,7 +42,8 @@ form.addEventListener("submit", async (e) => {
     form.reset();
     status.classList.add("success");
     status.textContent = "Thanks! Your message came straight to me. I'll personally follow up soon.";
-    // Lets Tag Manager count form submissions as leads
+    // Count form submissions as leads in Google Analytics and Tag Manager
+    if (window.gtag) window.gtag("event", "generate_lead", { form: "contact" });
     (window.dataLayer = window.dataLayer || []).push({ event: "contact_form_submit" });
   } catch (err) {
     status.classList.add("error");
