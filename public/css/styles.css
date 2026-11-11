@@ -208,6 +208,13 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.12;
 .form-status { margin: 1rem 0 0; min-height: 1.5em; font-weight: 600; }
 .form-status.success { color: #9be7bd; }
 .form-status.error { color: #ffb4a8; }
+.form-note {
+  display: flex; gap: 0.75rem; align-items: flex-start;
+  margin: 1.25rem 0 0; padding-top: 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  font-size: 0.98rem; line-height: 1.5; color: rgba(255,255,255,0.9);
+}
+.form-note .icon { width: 1.9rem; height: 1.9rem; font-size: 0.85rem; background: var(--gold); color: var(--navy); }
 .contact-direct { opacity: 0.88; overflow-wrap: anywhere; }
 
 /* Footer */

@@ -41,7 +41,9 @@ form.addEventListener("submit", async (e) => {
     if (!res.ok || !out.ok) throw new Error(out.error || "Something went wrong. Please try again.");
     form.reset();
     status.classList.add("success");
-    status.textContent = "Thanks! I'll be in touch soon to start planning.";
+    status.textContent = "Thanks! Your message came straight to me. I'll personally follow up soon.";
+    // Lets Tag Manager count form submissions as leads
+    (window.dataLayer = window.dataLayer || []).push({ event: "contact_form_submit" });
   } catch (err) {
     status.classList.add("error");
     status.textContent = err.message;
