@@ -32,8 +32,12 @@ export async function handleContact(request, env) {
     return json({ ok: false, error: "Please fill in your name, a valid email, and a message." }, 400);
   }
 
+  if (!data.phone || !data.dates || !data.guests) {
+    return json({ ok: false, error: "Please fill in your phone number, travel dates, and travelers." }, 400);
+  }
+
   if (!BUDGETS.includes(data.budget)) {
-    return json({ ok: false, error: "Please choose your approximate budget." }, 400);
+    return json({ ok: false, error: "Please choose your approximate total trip budget." }, 400);
   }
 
   const check = await verifyTurnstile(

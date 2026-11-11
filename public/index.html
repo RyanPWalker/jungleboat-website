@@ -110,6 +110,7 @@
           </div>
           <p>After more than 10 years as a Disneyland Cast Member and decades of executive leadership in hospitality, I understand what exceptional guest service looks like, and how much the details matter.</p>
           <p>Today, I bring that experience to every trip I plan. Whether it's Walt Disney World, Disneyland, a Disney Cruise or Universal Studios, I provide personalized, one-on-one planning designed around your family, your priorities, and your budget, so you can enjoy the experience without the stress of planning it.</p>
+          <p class="direct">You’re working directly with me, not a call center or an automated booking service.</p>
         </div>
       </div>
     </section>
@@ -125,7 +126,7 @@
           <li><span class="icon" aria-hidden="true">✦</span>Assistance before &amp; during your trip</li>
         </ul>
         <div class="budget">
-          <h3>What is your approximate budget?</h3>
+          <h3>What is your approximate total trip budget?</h3>
           <p>Pick a range to start planning your trip.</p>
           <div class="budget-options">
             <a href="#contact" class="budget-btn" data-budget="Under $5,000">Under &#36;5,000</a>
@@ -161,8 +162,8 @@
               <input id="email" name="email" type="email" autocomplete="email" required maxlength="200">
             </div>
             <div class="field">
-              <label for="phone">Phone <span class="optional">(optional)</span></label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="40">
             </div>
           </div>
           <div class="field-row">
@@ -177,7 +178,7 @@
               </select>
             </div>
             <div class="field">
-              <label for="budget">Approximate budget</label>
+              <label for="budget">Approximate total trip budget</label>
               <select id="budget" name="budget" required>
                 <option value="" disabled selected>Choose a range</option>
                 <option>Under $5,000</option>
@@ -190,12 +191,12 @@
           </div>
           <div class="field-row">
             <div class="field">
-              <label for="dates">Travel dates <span class="optional">(optional)</span></label>
-              <input id="dates" name="dates" maxlength="100" placeholder="e.g. March 10–17">
+              <label for="dates">Travel dates</label>
+              <input id="dates" name="dates" required maxlength="100" placeholder="e.g. March 10–17">
             </div>
             <div class="field">
-              <label for="guests">Travelers <span class="optional">(optional)</span></label>
-              <input id="guests" name="guests" maxlength="60" placeholder="e.g. 2 adults, 2 kids">
+              <label for="guests">Travelers</label>
+              <input id="guests" name="guests" required maxlength="60" placeholder="e.g. 2 adults, 2 kids">
             </div>
           </div>
           <div class="field">

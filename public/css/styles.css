@@ -139,6 +139,8 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.12;
 }
 @media (max-width: 860px) { .portrait .badge { right: -0.5rem; } }
 
+.direct { font-weight: 600; color: var(--jungle); }
+
 .affiliation { display: flex; align-items: center; gap: 0.9rem; margin: 0 0 1.5rem; }
 .affiliation img { width: 58px; height: auto; }
 .affiliation p { margin: 0; font-size: 0.95rem; line-height: 1.35; color: var(--muted); }
@@ -193,7 +195,6 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.12;
 .field-row { display: flex; gap: 1rem; }
 @media (max-width: 520px) { .field-row { flex-direction: column; gap: 0; } }
 .field label { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem; }
-.optional { opacity: 0.6; font-weight: 400; }
 .field input, .field textarea, .field select {
   font: inherit; font-size: 1rem; color: var(--ink);
   padding: 0.7em 0.85em;
