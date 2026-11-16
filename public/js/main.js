@@ -23,10 +23,11 @@ document.querySelectorAll(".budget-btn").forEach((btn) => {
 
 // Contact form: send with fetch so the page doesn't reload
 const form = document.querySelector(".contact-form");
-const status = form.querySelector(".form-status");
-const button = form.querySelector("button[type=submit]");
+const status = form?.querySelector(".form-status");
+const button = form?.querySelector("button[type=submit]");
 
-form.addEventListener("submit", async (e) => {
+// The form only exists on the homepage
+form?.addEventListener("submit", async (e) => {
   e.preventDefault();
   if (!form.reportValidity()) return;
 

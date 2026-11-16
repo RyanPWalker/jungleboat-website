@@ -223,3 +223,12 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.12;
 .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; }
 .footer-inner p { margin: 0; }
 .credit { flex-basis: 100%; font-size: 0.85rem; opacity: 0.7; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); }
+
+/* Privacy policy page */
+.policy-body { max-width: 760px; }
+.policy h1 { font-size: clamp(2.2rem, 5vw, 3rem); }
+.policy h2 { font-size: clamp(1.3rem, 3vw, 1.6rem); margin: 2.25rem 0 0.6rem; }
+.policy-date { color: var(--muted); margin-top: -0.25rem; }
+.policy ul { padding-left: 1.25rem; }
+.policy li { margin-bottom: 0.3rem; }
+.policy-contact { font-style: normal; line-height: 1.8; }
