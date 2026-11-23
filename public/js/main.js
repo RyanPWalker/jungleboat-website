@@ -44,7 +44,15 @@ form?.addEventListener("submit", async (e) => {
     status.classList.add("success");
     status.textContent = "Thanks! Your message came straight to me. I'll personally follow up soon.";
     // Count form submissions as leads in Google Analytics and Tag Manager
-    if (window.gtag) window.gtag("event", "generate_lead", { form: "contact" });
+    if (window.gtag) {
+      window.gtag("event", "generate_lead", { form: "contact" });
+      // Google Ads "Submit lead form" conversion
+      window.gtag("event", "conversion", {
+        send_to: "AW-18571988798/QfwQCLWGprcdEL6e6JdF",
+        value: 1.0,
+        currency: "USD",
+      });
+    }
     (window.dataLayer = window.dataLayer || []).push({ event: "contact_form_submit" });
   } catch (err) {
     status.classList.add("error");
